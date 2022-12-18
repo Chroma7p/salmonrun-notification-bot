@@ -1,11 +1,12 @@
 # discord.pyの大事な部分をimport
 from discord.ext import commands
+import discord
 import os
 
 # デプロイ先の環境変数にトークンをおいてね
 APITOKEN = os.environ["DISCORD_API_TOKEN"]
 # botのオブジェクトを作成(コマンドのトリガーを!に)
-bot = commands.Bot(command_prefix="!")
+bot = commands.Bot(command_prefix="!",intents=discord.Intents.all())
 
 # コマンドを設定
 @bot.command()
